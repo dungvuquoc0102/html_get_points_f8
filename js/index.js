@@ -1,24 +1,9 @@
-// async function main() {
-// 	let result = await fetch("https://quiet-wildwood-57342-43872186abf1.herokuapp.com/");
-// 	let data = await result.json();
-// 	return data;
-// }
-const data = [
-	["Lê Hữu Trọng", "9.46"],
-	["Vũ Quốc Dũng", "9.30"],
-	["Nguyễn Thành An", "9.27"],
-	["Mạnh Phan Tuấn", "8.92"],
-	["Nguyễn Trường Giang", "8.34"],
-	["Hoàng Thanh Huy", "8.19"],
-	["Nguyễn Thế Hân", "7.48"],
-	["Vũ Anh Tuấn", "7.02"],
-	["Nguyễn Hải Dương", "6.32"],
-	["Nguyễn Trung Hiếu", "5.83"],
-	["Trần Ngọc Duy", "4.74"],
-	["Hoàng Nguyễn Huy", "3.63"],
-	["Anh Trần Tuấn", "1.04"]
-];
-function remove_unicode(str, c = "", isKeepCase = true) {
+async function main() {
+	let result = await fetch("https://quiet-wildwood-57342-43872186abf1.herokuapp.com/");
+	let data = await result.json();
+	return data;
+}
+function remove_unicode(str, c = " ", isKeepCase = true) {
 	if (!isKeepCase) {
 		str = str.toLowerCase();
 	}
@@ -38,24 +23,39 @@ function remove_unicode(str, c = "", isKeepCase = true) {
 	str = str.replace(/Ỳ|Ý|Ỵ|Ỷ|Ỹ/g, "Y");
 	str = str.replace(/Đ/g, "D");
 
-	str = str.replace(/!|@|%|\^|\*|\(|\)|\+|\=|\<|\>|\?|\/|,|\.|\:|\;|\'| |\"|\&|\#|\[|\]|~|$|_/g, c);
-
-	str = str.replace(`/${c}+${c}/g`, c);
-	str = str.replace(`/^${c}+|${c}+$/g`, "");
+	str = str.replace(/!|@|%|\^|\*|\(|\)|\+|\=|\<|\>|\?|\/|,|\.|\:|\;|\'| |\"|\&|\#|\[|\]|~|_/g, c);
 
 	return str;
 }
-const ulTag = document.getElementById("ranking-list");
-const liTag = document.createElement("li");
-for (let i = 0; i < data.length; i++) {
+(async () => {
+	let data = await main();
+	const ulTag = document.getElementById("ranking-list");
 	const liTag = document.createElement("li");
-	liTag.innerHTML = `<div class="ranking-number">${i + 1}</div>
+	for (let i = 0; i < data.length; i++) {
+		const liTag = document.createElement("li");
+		liTag.innerHTML = `<div class="ranking-number">${i + 1}</div>
   <div class="ranking-avatar">
-    <img src="images/${remove_unicode(data[i][0])}.png" alt="avatar">
+    <img src="images/${remove_unicode(data[i][0], "")}.png" alt="avatar">
   </div>
-  <div class="ranking-name">${remove_unicode(data[i][0], " ")}</div>
+  <div class="ranking-name">${remove_unicode(data[i][0])}</div>
   <div class="ranking-point">${data[i][1]}</div>`;
-	ulTag.appendChild(liTag);
-}
-const spanTag = document.getElementById("ranking-total-user");
-spanTag.innerHTML = data.length || 13;
+		ulTag.appendChild(liTag);
+	}
+	const spanTag = document.getElementById("ranking-total-user");
+	spanTag.innerHTML = data.length || 13;
+})();
+// const data = [
+// 	["Lê Hữu Trọng", "9.46"],
+// 	["Vũ Quốc Dũng", "9.30"],
+// 	["Nguyễn Thành An", "9.27"],
+// 	["Mạnh Phan Tuấn", "8.92"],
+// 	["Nguyễn Trường Giang", "8.34"],
+// 	["Hoàng Thanh Huy", "8.19"],
+// 	["Nguyễn Thế Hân", "7.48"],
+// 	["Vũ Anh Tuấn", "7.02"],
+// 	["Nguyễn Hải Dương", "6.32"],
+// 	["Nguyễn Trung Hiếu", "5.83"],
+// 	["Trần Ngọc Duy", "4.74"],
+// 	["Hoàng Nguyễn Huy", "3.63"],
+// 	["Anh Trần Tuấn", "1.04"]
+// ];

@@ -1,7 +1,7 @@
-async function main() {
-	let result = await fetch("https://quiet-wildwood-57342-43872186abf1.herokuapp.com/");
-	let data = await result.json();
-	return data;
+async function fetchAllDayPoints() {
+	let result = await fetch("https://quiet-wildwood-57342-43872186abf1.herokuapp.com/api/points");
+	let allDayPoints = await result.json();
+	return allDayPoints;
 }
 function remove_unicode(str, c = " ", isKeepCase = true) {
 	if (!isKeepCase) {
@@ -27,24 +27,65 @@ function remove_unicode(str, c = " ", isKeepCase = true) {
 
 	return str;
 }
+function calculateAndSortAveragePoints(allDayPoints) {
+	const totalPoints = {};
+	let validDayCount = 0; // Count of valid days (days with non-zero points)
+	// Loop through each day and sum the points for each person if the day is valid
+	allDayPoints.forEach((day) => {
+		const dayData = day.pointsOfDay; // Get the data for the day
+		let hasValidPoints;
+		if (dayData == undefined) {
+			hasValidPoints = false;
+		} else {
+			hasValidPoints = Object.values(dayData).some((point) => point > 0); // Check if the day has any valid points
+		}
+		if (hasValidPoints) {
+			validDayCount++; // Increment valid day count only if the day has valid points
+			for (let person in dayData) {
+				if (totalPoints[person]) {
+					totalPoints[person] += dayData[person];
+				} else {
+					totalPoints[person] = dayData[person];
+				}
+			}
+		}
+	});
+	// Ensure all participants have data for the valid days
+	const allParticipants = new Set(Object.keys(totalPoints));
+	allDayPoints.forEach((day) => {
+		if (day.pointsOfDay != undefined) {
+			Object.keys(day.pointsOfDay).forEach((person) => allParticipants.add(person));
+		}
+	});
+	// Calculate averages over the valid days for each participant
+	const averagePoints = Array.from(allParticipants).map((person) => {
+		const total = totalPoints[person] || 0; // If no score, treat as 0
+		return [person, (total / validDayCount).toFixed(2)]; // Calculate average points over validDayCount
+	});
+	// Sort by average points
+	averagePoints.sort((a, b) => b[1] - a[1]);
+	// Return the results
+	return averagePoints;
+}
+
 (async () => {
-	let data = await main();
+	let allDayPoints = await fetchAllDayPoints();
+	let averagePoints = calculateAndSortAveragePoints(allDayPoints);
 	const ulTag = document.getElementById("ranking-list");
-	const liTag = document.createElement("li");
-	for (let i = 0; i < data.length; i++) {
+	for (let i = 0; i < averagePoints.length; i++) {
 		const liTag = document.createElement("li");
 		liTag.innerHTML = `<div class="ranking-number">${i + 1}</div>
   <div class="ranking-avatar">
-    <img src="images/${remove_unicode(data[i][0], "")}.png" alt="avatar">
+    <img src="images/${remove_unicode(averagePoints[i][0], "")}.png" alt="avatar">
   </div>
-  <div class="ranking-name">${remove_unicode(data[i][0])}</div>
-  <div class="ranking-point">${data[i][1]}</div>`;
+  <div class="ranking-name">${remove_unicode(averagePoints[i][0])}</div>
+  <div class="ranking-point">${averagePoints[i][1]}</div>`;
 		ulTag.appendChild(liTag);
 	}
 	const spanTag = document.getElementById("ranking-total-user");
-	spanTag.innerHTML = data.length || 13;
+	spanTag.innerHTML = averagePoints.length || 13;
 })();
-// const data = [
+// const averagePoints = [
 // 	["Lê Hữu Trọng", "9.46"],
 // 	["Vũ Quốc Dũng", "9.30"],
 // 	["Nguyễn Thành An", "9.27"],

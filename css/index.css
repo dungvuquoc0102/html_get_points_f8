@@ -101,28 +101,54 @@ img {
   font-size: 12px;
   color: #808080;
 }
-.content-wrapper .ranking .ranking-content .ranking-list li {
+.content-wrapper .ranking .ranking-content .ranking-list li .ranking-item {
   display: flex;
   align-items: center;
   border-bottom: 1px dotted #dddddd;
   padding: 15px;
+  cursor: pointer;
 }
-.content-wrapper .ranking .ranking-content .ranking-list li .ranking-number {
+.content-wrapper .ranking .ranking-content .ranking-list li .ranking-item:hover {
+  background-color: #f5f5f5;
+}
+.content-wrapper .ranking .ranking-content .ranking-list li .ranking-item .ranking-number {
   color: rgba(0, 0, 0, 0.6509803922);
   width: 20px;
   margin-right: 25px;
 }
-.content-wrapper .ranking .ranking-content .ranking-list li .ranking-avatar {
+.content-wrapper .ranking .ranking-content .ranking-list li .ranking-item .ranking-avatar {
   margin-right: 15px;
 }
-.content-wrapper .ranking .ranking-content .ranking-list li .ranking-avatar img {
+.content-wrapper .ranking .ranking-content .ranking-list li .ranking-item .ranking-avatar img {
   weight: 35px;
   height: 35px;
   border-radius: 50%;
 }
-.content-wrapper .ranking .ranking-content .ranking-list li .ranking-name {
+.content-wrapper .ranking .ranking-content .ranking-list li .ranking-item .ranking-name {
   flex-grow: 1;
   color: #5a5a5a;
+}
+.content-wrapper .ranking .ranking-content .ranking-list li .ranking-item-detail {
+  background-color: #e3e3e3;
+  height: 0;
+  overflow: hidden;
+}
+.content-wrapper .ranking .ranking-content .ranking-list li .ranking-item-detail .item-detail-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  padding: 15px 45px;
+}
+.content-wrapper .ranking .ranking-content .ranking-list li .ranking-item-detail .item-detail-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 45px;
+}
+.content-wrapper .ranking .ranking-content .ranking-list li .ranking-item-detail .item-detail-list li:first-child {
+  padding-top: 0;
+}
+.content-wrapper .ranking .ranking-content .ranking-list li .show {
+  height: 100%;
 }
 
 .footer {
@@ -134,7 +160,6 @@ img {
   align-items: center;
 }
 .footer .container .footer-copyright {
-  margin-right: 25px;
   color: #757575;
 }
 .footer .container .footer-menu {

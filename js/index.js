@@ -497,12 +497,11 @@ function calcPointsOfEachPerson(allDayPoints) {
 	//add total user
 	const spanTag = document.getElementById("ranking-total-user");
 	spanTag.innerHTML = averagePoints.length || 13;
-})();
-
-const rankingItemTags = document.querySelectorAll(".ranking-item");
-rankingItemTags.forEach((rankingItemTag) => {
-	const rankingItemDetailTag = rankingItemTag.nextElementSibling;
-	rankingItemTag.addEventListener("click", function () {
-		rankingItemDetailTag.classList.toggle("show");
+	const rankingItemTags = document.querySelectorAll(".ranking-item");
+	rankingItemTags.forEach((rankingItemTag) => {
+		const rankingItemDetailTag = rankingItemTag.nextElementSibling;
+		rankingItemTag.addEventListener("click", function () {
+			rankingItemDetailTag.classList.toggle("show");
+		});
 	});
-});
+})();

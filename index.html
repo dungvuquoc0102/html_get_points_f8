@@ -1,54 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ranking</title>
+    <link rel="icon" href="images/logo.png" type="image/x-icon" />
+    <link rel="stylesheet" href="css/index.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ranking</title>
-  <link rel="icon" href="images/logo.png" type="image/x-icon">
-  <link rel="stylesheet" href="css/index.css">
-</head>
-
-<body>
-  <header class="header dark-bg">
-    <div class="container">
-      <div class="header-logo">
-        <a href="/">
-          <img src="images/logo.png" alt="logo">
-        </a>
-      </div>
-      <div class="header-menu">
-        <nav class="header-nav">
-          <ul>
-            <li><a href="#!" class="active dark-txt">Ranking</a></li>
-            <!-- <li><a href="#!">Discussion</a></li> -->
-          </ul>
-        </nav>
-      </div>
-      <div class="header-function">
-        <div class="header-appearance">
-          <div class="header-appearance-bg"></div>
-          <div class="header-appearance-btn"></div>
-        </div>
-        <div class="header-user">
-          <a href="#!">
-            <img src="images/VuQuocDung.png" alt="user-avt">
+  <body>
+    <header class="header dark-bg">
+      <div class="container">
+        <div class="header-logo">
+          <a href="/">
+            <img src="images/logo.png" alt="logo" />
           </a>
         </div>
-      </div>
-    </div>
-  </header>
-  <div class="content-wrapper">
-    <section class="ranking">
-      <div class="container">
-        <div class="ranking-header">
-          <h1 class="ranking-title">F8 K10 Ranking</h1>
+        <div class="header-menu">
+          <nav class="header-nav">
+            <ul>
+              <li><a href="#!" class="active dark-txt">Ranking</a></li>
+              <!-- <li><a href="#!">Discussion</a></li> -->
+            </ul>
+          </nav>
         </div>
-        <div class="ranking-content">
-          <div class="ranking-total-user">Total Participants: <span id="ranking-total-user"></span></div>
-          <div class="ranking-list-header">Point</div>
-          <ul class="ranking-list" id="ranking-list">
-            <!-- <li>
+        <div class="header-function">
+          <div class="header-appearance">
+            <div class="header-appearance-bg"></div>
+            <div class="header-appearance-btn"></div>
+          </div>
+          <div class="header-user">
+            <a href="#!">
+              <img src="images/VuQuocDung.png" alt="user-avt" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <section class="ranking">
+        <div class="container">
+          <div class="ranking-header">
+            <h1 class="ranking-title">F8 K10 Ranking</h1>
+          </div>
+          <div class="ranking-content">
+            <div class="ranking-content-function">
+              <div class="ranking-total-user">
+                Total Participants: <span id="ranking-total-user"></span>
+              </div>
+              <div class="ranking-last-day">
+                Last day: <span id="ranking-last-day"></span>
+              </div>
+            </div>
+            <div class="ranking-list-header">Point</div>
+            <ul class="ranking-list" id="ranking-list">
+              <!-- <li>
               <div class="ranking-item">
                 <div class="ranking-number">1</div>
                 <div class="ranking-avatar">
@@ -108,31 +114,28 @@
                 </ul>
               </div>
             </li> -->
-          </ul>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </div>
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-copyright">Copyright © 2024 Ranking</div>
+        <div class="footer-menu">
+          <nav class="footer-nav">
+            <ul>
+              <li><a href="#!">About</a></li>
+              <li><a href="#!">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="footer-region">
+          <img class="footer-region-img" src="images/vn.svg" alt="vietnam" />
+          <a href="#!" class="footer-region-name">Vietnam</a>
         </div>
       </div>
-    </section>
-  </div>
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-copyright">
-        Copyright © 2024 Ranking
-      </div>
-      <div class="footer-menu">
-        <nav class="footer-nav">
-          <ul>
-            <li><a href="#!">About</a></li>
-            <li><a href="#!">Contact</a></li>
-          </ul>
-        </nav>
-      </div>
-      <div class="footer-region">
-        <img class="footer-region-img" src="images/vn.svg" alt="vietnam">
-        <a href="#!" class="footer-region-name">Vietnam</a>
-      </div>
-    </div>
-  </footer>
-  <script src="js/index.js"></script>
-</body>
-
+    </footer>
+    <script src="js/index.js"></script>
+  </body>
 </html>

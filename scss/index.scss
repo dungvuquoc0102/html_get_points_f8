@@ -71,56 +71,47 @@ html {
 			.header-function {
 				display: flex;
 				align-items: center;
-				// .header-appearance {
-				// 	width: 40px;
-				// 	height: 20px;
-				// 	background-color: #d7d7d7;
-				// 	border-radius: 99px;
-				// 	margin-left: 2rem;
-				// 	position: relative;
-				// 	overflow: hidden;
-				// 	cursor: pointer;
-				// 	.header-appearance-bg {
-				// 		position: absolute;
-				// 		inset: 0;
-				// 		right: 75%;
-				// 		border-radius: 99px 0 0 99px;
-				// 		background-color: #555555;
-				// 		transition: right 0.2s;
-				// 	}
-				// 	.header-appearance-btn {
-				// 		position: absolute;
-				// 		top: 0;
-				// 		left: 0;
-				// 		width: 20px;
-				// 		height: 20px;
-				// 		border-radius: 50%;
-				// 		background-color: rgb(151 152 153);
-				// 		transition: left 0.2s;
-				// 		display: flex;
-				// 		align-items: center;
-				// 		justify-content: center;
-				// 	}
-				// 	.header-appearance-bg-dark {
-				// 		right: 25%;
-				// 	}
-				// 	.header-appearance-btn-dark {
-				// 		left: 20px;
-				// 	}
-				// 	// &:hover {
-				// 	// 	.header-appearance-bg {
-				// 	// 		right: 0;
-				// 	// 	}
-				// 	// 	.header-appearance-btn {
-				// 	// 		left: 30px;
-				// 	// 	}
-				// 	// }
-				// }
+				.header-sound-btn {
+					width: 34px;
+					height: 34px;
+					border-radius: 50%;
+					margin-left: 15px;
+					background-color: #fe904d;
+					position: relative;
+					cursor: pointer;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					i {
+						color: #fedd59;
+						margin-left: 2px;
+						margin-top: 1px;
+						transition: scale 0.1s;
+						&.pause {
+							position: absolute;
+							scale: 0;
+						}
+						&.play {
+							scale: 1;
+						}
+					}
+				}
+				.play {
+					i {
+						&.pause {
+							margin: 0;
+							scale: 1;
+						}
+						&.play {
+							scale: 0;
+						}
+					}
+				}
 				.header-appearance {
 					width: 34px;
 					height: 34px;
 					border-radius: 50%;
-					margin-left: 20px;
+					margin-left: 15px;
 					background-color: #444444;
 					position: relative;
 					cursor: pointer;
@@ -129,10 +120,6 @@ html {
 					align-items: center;
 					justify-content: center;
 					img {
-						// position: absolute;
-						// top: 50%;
-						// left: 50%;
-						// transform: translate(-50%, -50%);
 						transition: 0.5s;
 						transition-property: scale rotate;
 						&.sun {

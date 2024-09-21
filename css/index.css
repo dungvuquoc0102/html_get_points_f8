@@ -76,11 +76,43 @@ html .header .container .header-function {
   display: flex;
   align-items: center;
 }
+html .header .container .header-function .header-sound-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  margin-left: 15px;
+  background-color: #fe904d;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+html .header .container .header-function .header-sound-btn i {
+  color: #fedd59;
+  margin-left: 2px;
+  margin-top: 1px;
+  transition: scale 0.1s;
+}
+html .header .container .header-function .header-sound-btn i.pause {
+  position: absolute;
+  scale: 0;
+}
+html .header .container .header-function .header-sound-btn i.play {
+  scale: 1;
+}
+html .header .container .header-function .play i.pause {
+  margin: 0;
+  scale: 1;
+}
+html .header .container .header-function .play i.play {
+  scale: 0;
+}
 html .header .container .header-function .header-appearance {
   width: 34px;
   height: 34px;
   border-radius: 50%;
-  margin-left: 20px;
+  margin-left: 15px;
   background-color: #444444;
   position: relative;
   cursor: pointer;

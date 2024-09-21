@@ -513,19 +513,33 @@ function calcPointsOfEachPerson(allDayPoints) {
 			rankingItemDetailTag.classList.toggle("show");
 		});
 	});
-	//change theme
+	//change theme when click
 	const headerAppearanceTag = document.querySelector(".header-appearance");
 	const headerAppearanceBgTag = document.querySelector(".header-appearance-bg");
 	const headerAppearanceBtnTag = document.querySelector(".header-appearance-btn");
 	headerAppearanceTag.addEventListener("click", function () {
 		document.querySelector("html").classList.toggle("dark");
-		// headerAppearanceBgTag.classList.toggle("header-appearance-bg-dark");
-		// headerAppearanceBtnTag.classList.toggle("header-appearance-btn-dark");
 	});
+	//change theme follow system
 	if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
 		document.querySelector("html").classList.toggle("dark");
 	}
+	//change theme when system change
 	window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", (event) => {
 		document.querySelector("html").classList.toggle("dark");
+	});
+	//add sound
+	const headerSoundTag = document.querySelector(".header-sound");
+	const headerSoundBtnTag = document.querySelector(".header-sound-btn");
+	headerSoundBtnTag.addEventListener("click", function () {
+		if (headerSoundTag.paused) {
+			headerSoundTag.play();
+		} else {
+			headerSoundTag.pause();
+		}
+		headerSoundBtnTag.classList.toggle("play");
+	});
+	headerSoundTag.addEventListener("ended", function () {
+		headerSoundBtnTag.classList.remove("play");
 	});
 })();

@@ -477,7 +477,7 @@ function calcPointsOfEachPerson(allDayPoints) {
   		<div class="ranking-avatar">
     		<img src="images/${remove_unicode(averagePoints[i][0], "")}.png" alt="avatar">
   		</div>
-  		<div class="ranking-name">${remove_unicode(averagePoints[i][0])}</div>
+  		<div class="ranking-name"><div>${remove_unicode(averagePoints[i][0])}</div></div>
   		<div class="ranking-point">${averagePoints[i][1]}</div>
 		</div>
 		`;
@@ -537,9 +537,13 @@ function calcPointsOfEachPerson(allDayPoints) {
 		} else {
 			headerSoundTag.pause();
 		}
+		// ulTag.classList.toggle("paused-animation");
+		ulTag.classList.toggle("none-animation");
 		headerSoundBtnTag.classList.toggle("play");
 	});
 	headerSoundTag.addEventListener("ended", function () {
+		// ulTag.classList.toggle("paused-animation");
+		ulTag.classList.toggle("none-animation");
 		headerSoundBtnTag.classList.remove("play");
 	});
 })();

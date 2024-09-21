@@ -5,22 +5,7 @@
 	box-sizing: border-box;
 	// outline: 1px solid #ccc;
 }
-@keyframes rotateAllTag {
-	0% {
-		transform: rotate(0deg);
-	}
-	50% {
-		transform: rotate(-5deg);
-	}
-	100% {
-		transform: rotate(5deg);
-	}
-}
-%rotateAllTagAnimation {
-	animation-name: rotateAllTag;
-	animation-duration: 1s;
-	animation-iteration-count: infinite;
-}
+
 a {
 	text-decoration: none;
 	color: inherit;
@@ -41,7 +26,10 @@ img {
 	display: block;
 	max-width: 100%;
 }
-
+body {
+	position: relative;
+	z-index: -3;
+}
 html {
 	.header {
 		position: sticky;
@@ -178,6 +166,8 @@ html {
 	}
 	.content-wrapper {
 		background-color: #fafafa;
+		position: relative;
+		z-index: -2;
 		.ranking {
 			padding: 30px 0;
 			min-height: 100vh;
@@ -208,9 +198,12 @@ html {
 						padding-right: 15px;
 						font-size: 12px;
 						color: #808080;
+						margin-bottom: 15px;
 					}
 					.ranking-list {
 						position: relative;
+						background-color: #fff;
+						border-radius: 10px;
 						li {
 							.ranking-item {
 								display: flex;
@@ -225,11 +218,9 @@ html {
 									color: #000000a6;
 									width: 20px;
 									margin-right: 10px;
-									@extend %rotateAllTagAnimation;
 								}
 								.ranking-avatar {
 									margin-right: 15px;
-									@extend %rotateAllTagAnimation;
 									img {
 										weight: 35px;
 										height: 35px;
@@ -241,11 +232,9 @@ html {
 									color: #5a5a5a;
 									div {
 										width: fit-content;
-										@extend %rotateAllTagAnimation;
 									}
 								}
 								.ranking-point {
-									@extend %rotateAllTagAnimation;
 								}
 							}
 							.ranking-item-detail {
@@ -319,64 +308,101 @@ html {
 									}
 								}
 							}
-						}
-						// @keyframes moveRoundUlTag {
-						// 	0% {
-						// 		top: 100%;
-						// 		left: 0;
-						// 		background-color: red;
-						// 	}
-						// 	25% {
-						// 		top: 0;
-						// 		left: 0;
-						// 		background-color: green;
-						// 	}
-						// 	50% {
-						// 		top: 0;
-						// 		left: 100%;
-						// 		background-color: blue;
-						// 	}
-						// 	75% {
-						// 		top: 100%;
-						// 		left: 100%;
-						// 		background-color: yellow;
-						// 	}
-						// 	100% {
-						// 		top: 100%;
-						// 		left: 0;
-						// 		background-color: red;
-						// 	}
-						// }
-						// &::after {
-						// 	content: "";
-						// 	display: block;
-						// 	width: 10px;
-						// 	height: 10px;
-						// 	border-radius: 50%;
-						// 	background-color: red;
-						// 	position: absolute;
-						// 	animation-name: moveRoundUlTag;
-						// 	animation-duration: 2s;
-						// 	animation-iteration-count: infinite;
-						// }
-					}
-					.none-animation {
-						.ranking-item {
-							.ranking-number {
-								animation: none !important;
-							}
-							.ranking-avatar {
-								animation: none !important;
-							}
-							.ranking-name {
-								div {
-									animation: none !important;
+							&:first-child {
+								.ranking-item {
+									border-radius: 10px 10px 0 0;
 								}
 							}
-							.ranking-point {
-								animation: none !important;
+							&:last-child {
+								.ranking-item {
+									border-radius: 0 0 10px 10px;
+								}
 							}
 						}
+					}
+					.animation {
+						//rotate
+						li {
+							.ranking-item {
+								.ranking-number {
+									animation: rotateAllTag 1s infinite linear;
+								}
+								.ranking-avatar {
+									animation: rotateAllTag 1s infinite linear;
+								}
+								.ranking-name {
+									div {
+										animation: rotateATag 1s infinite linear;
+									}
+								}
+								.ranking-point {
+									animation: rotateAllTag 1s infinite linear;
+								}
+							}
+						}
+						//glow
+						&::after {
+							content: "";
+							position: absolute;
+							left: -3px;
+							top: -3px;
+							width: calc(100% + 6px);
+							height: calc(100% + 6px);
+							background: linear-gradient(45deg, #e6fb04, #ff6600, #00ff66, #00ffff, #ff00ff, #ff0099, #6e0dd0, #ff3300, #099fff);
+							background-size: 400%;
+							z-index: -1;
+							animation: animate 20s linear infinite;
+						}
+					}
+					//keyframes for rotate
+					@keyframes rotateAllTag {
+						0% {
+							transform: rotate(0deg);
+						}
+						25% {
+							transform: rotate(-15deg);
+						}
+						50% {
+							transform: rotate(0deg);
+						}
+						75% {
+							transform: rotate(15deg);
+						}
+						100% {
+							transform: rotate(0deg);
+						}
+					}
+					@keyframes rotateATag {
+						0% {
+							transform: rotate(0deg);
+						}
+						25% {
+							transform: rotate(-5deg);
+						}
+						50% {
+							transform: rotate(0deg);
+						}
+						75% {
+							transform: rotate(5deg);
+						}
+						100% {
+							transform: rotate(0deg);
+						}
+					}
+					//keyframes for glow
+					@keyframes animate {
+						0% {
+							background-position: 0 0;
+						}
+						50% {
+							background-position: 400% 0;
+						}
+						100% {
+							background-position: 0 0;
+						}
+					}
+					.animation::after {
+						filter: blur(60px);
 					}
 				}
 			}
@@ -483,6 +509,7 @@ html.dark {
 			}
 			.ranking-content {
 				.ranking-list {
+					background-color: rgb(25, 25, 25);
 					li {
 						.ranking-item {
 							border-bottom: 1px dotted #3c3c3c;

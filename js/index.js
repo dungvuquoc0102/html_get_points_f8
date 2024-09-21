@@ -537,13 +537,11 @@ function calcPointsOfEachPerson(allDayPoints) {
 		} else {
 			headerSoundTag.pause();
 		}
-		// ulTag.classList.toggle("paused-animation");
-		ulTag.classList.toggle("none-animation");
+		ulTag.classList.toggle("animation");
 		headerSoundBtnTag.classList.toggle("play");
 	});
 	headerSoundTag.addEventListener("ended", function () {
-		// ulTag.classList.toggle("paused-animation");
-		ulTag.classList.toggle("none-animation");
+		ulTag.classList.toggle("animation");
 		headerSoundBtnTag.classList.remove("play");
 	});
 })();

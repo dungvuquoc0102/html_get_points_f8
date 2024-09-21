@@ -77,42 +77,31 @@ html .header .container .header-function {
   align-items: center;
 }
 html .header .container .header-function .header-appearance {
-  width: 40px;
-  height: 20px;
-  background-color: #d7d7d7;
-  border-radius: 99px;
-  margin-left: 2rem;
-  position: relative;
-  overflow: hidden;
-  cursor: pointer;
-}
-html .header .container .header-function .header-appearance .header-appearance-bg {
-  position: absolute;
-  top: -1px;
-  bottom: -1px;
-  left: -1px;
-  right: 75%;
-  background-color: #555555;
-  transition: all 0.2s;
-}
-html .header .container .header-function .header-appearance .header-appearance-btn {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 20px;
-  height: 20px;
+  width: 34px;
+  height: 34px;
   border-radius: 50%;
-  background-color: rgb(151, 152, 153);
-  transition: all 0.2s;
+  margin-left: 20px;
+  background-color: #444444;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 1s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-html .header .container .header-function .header-appearance .header-appearance-bg-dark {
-  right: 25%;
+html .header .container .header-function .header-appearance img {
+  transition: 0.5s;
+  transition-property: scale rotate;
 }
-html .header .container .header-function .header-appearance .header-appearance-btn-dark {
-  left: 20px;
+html .header .container .header-function .header-appearance img.sun {
+  scale: 0;
+  position: absolute;
+}
+html .header .container .header-function .header-appearance img.moon {
+  scale: 1;
 }
 html .header .container .header-function .header-user {
-  margin-left: 2rem;
+  margin-left: 15px;
 }
 html .header .container .header-function .header-user a {
   display: block;
@@ -220,6 +209,7 @@ html .content-wrapper .ranking .container .ranking-content .ranking-list li .ran
 html .content-wrapper .ranking .container .ranking-content .ranking-list li .show {
   height: 200px;
   overflow: auto;
+  scrollbar-width: none;
 }
 html .content-wrapper .ranking .container .ranking-content .ranking-list li:nth-child(1) .ranking-item .ranking-avatar, html .content-wrapper .ranking .container .ranking-content .ranking-list li:nth-child(3) .ranking-item .ranking-avatar, html .content-wrapper .ranking .container .ranking-content .ranking-list li:nth-child(2) .ranking-item .ranking-avatar {
   position: relative;
@@ -313,6 +303,18 @@ html.dark .header .container .header-menu ul li a:hover {
 html.dark .header .container .header-menu ul li .active {
   color: #f5f5f5 !important;
   border-bottom: 2px solid #f5f5f5 !important;
+}
+html.dark .header .container .header-function .header-appearance {
+  background-color: #d9d9d9;
+}
+html.dark .header .container .header-function .header-appearance img {
+  rotate: 270deg;
+}
+html.dark .header .container .header-function .header-appearance img.sun {
+  scale: 1;
+}
+html.dark .header .container .header-function .header-appearance img.moon {
+  scale: 0;
 }
 html.dark .content-wrapper {
   background-color: rgb(40, 40, 40);

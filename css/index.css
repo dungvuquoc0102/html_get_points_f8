@@ -310,10 +310,10 @@ html .content-wrapper .ranking .container .ranking-content .animation li .rankin
 html .content-wrapper .ranking .container .ranking-content .animation::after {
   content: "";
   position: absolute;
-  left: -3px;
-  top: -3px;
-  width: calc(100% + 6px);
-  height: calc(100% + 6px);
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
   background: linear-gradient(45deg, #e6fb04, #ff6600, #00ff66, #00ffff, #ff00ff, #ff0099, #6e0dd0, #ff3300, #099fff);
   background-size: 400%;
   z-index: -1;
@@ -468,7 +468,7 @@ html.dark .content-wrapper .ranking .ranking-content .ranking-list li .ranking-i
   color: #fff;
 }
 html.dark .content-wrapper .ranking .ranking-content .ranking-list li .ranking-item-detail {
-  background-color: rgb(25, 25, 25);
+  background-color: #000;
   color: #fff;
 }
 html.dark .footer {

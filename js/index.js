@@ -529,19 +529,19 @@ function calcPointsOfEachPerson(allDayPoints) {
 		document.querySelector("html").classList.toggle("dark");
 	});
 	//add sound
-	const headerSoundTag = document.querySelector(".header-sound");
+	// const headerSoundTag = document.querySelector(".header-sound");
 	const headerSoundBtnTag = document.querySelector(".header-sound-btn");
 	headerSoundBtnTag.addEventListener("click", function () {
-		if (headerSoundTag.paused) {
-			headerSoundTag.play();
-		} else {
-			headerSoundTag.pause();
-		}
+		// if (headerSoundTag.paused) {
+		// 	headerSoundTag.play();
+		// } else {
+		// 	headerSoundTag.pause();
+		// }
 		ulTag.classList.toggle("animation");
 		headerSoundBtnTag.classList.toggle("play");
 	});
-	headerSoundTag.addEventListener("ended", function () {
-		ulTag.classList.toggle("animation");
-		headerSoundBtnTag.classList.remove("play");
-	});
+	// headerSoundTag.addEventListener("ended", function () {
+	// 	ulTag.classList.toggle("animation");
+	// 	headerSoundBtnTag.classList.remove("play");
+	// });
 })();

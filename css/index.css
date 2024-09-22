@@ -234,6 +234,9 @@ html .content-wrapper .ranking .container .ranking-content .ranking-list li .ran
 html .content-wrapper .ranking .container .ranking-content .ranking-list li .ranking-item .ranking-name div {
   width: fit-content;
 }
+html .content-wrapper .ranking .container .ranking-content .ranking-list li .none-border-radius {
+  border-radius: 0 !important;
+}
 html .content-wrapper .ranking .container .ranking-content .ranking-list li .ranking-item-detail {
   background-color: #e3e3e3;
   height: 0;
@@ -258,6 +261,9 @@ html .content-wrapper .ranking .container .ranking-content .ranking-list li .sho
   height: 200px;
   overflow: auto;
   scrollbar-width: none;
+}
+html .content-wrapper .ranking .container .ranking-content .ranking-list li .border-radius {
+  border-radius: 0 0 10px 10px;
 }
 html .content-wrapper .ranking .container .ranking-content .ranking-list li:nth-child(1) .ranking-item .ranking-avatar, html .content-wrapper .ranking .container .ranking-content .ranking-list li:nth-child(3) .ranking-item .ranking-avatar, html .content-wrapper .ranking .container .ranking-content .ranking-list li:nth-child(2) .ranking-item .ranking-avatar {
   position: relative;

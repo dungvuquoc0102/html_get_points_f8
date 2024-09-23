@@ -524,10 +524,14 @@ function calcPointsOfEachPerson(allDayPoints) {
 	lastDayTag.innerHTML = allDayPoints.length || 0;
 	//show detail item
 	const rankingItemTags = document.querySelectorAll(".ranking-item");
-	rankingItemTags.forEach((rankingItemTag) => {
+	rankingItemTags.forEach((rankingItemTag, index) => {
 		const rankingItemDetailTag = rankingItemTag.nextElementSibling;
 		rankingItemTag.addEventListener("click", function () {
 			rankingItemDetailTag.classList.toggle("show");
+			if (index === rankingItemTags.length - 1) {
+				rankingItemTag.classList.toggle("none-border-radius");
+				rankingItemDetailTag.classList.toggle("border-radius");
+			}
 		});
 	});
 	//change theme when click

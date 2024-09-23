@@ -430,6 +430,23 @@ const cloneAllDayPoints = [
 			"Lê Hữu Trọng": 9.875
 		},
 		__v: 0
+	},
+	{
+		_id: "66f0d987a204bb45b12094c5",
+		day: "day22",
+		pointsOfDay: {
+			"Nguyễn Thế Hân": 9.7,
+			"Nguyễn Hải Dương": 9.7,
+			"Vũ Anh Tuấn": 9.8,
+			"Nguyễn Trung Hiếu": 6.5,
+			"Hoàng Thanh Huy": 9,
+			"Nguyễn Trường Giang": 8,
+			"Vũ Quốc Dũng": 9.7,
+			"Lê Hữu Trọng": 9.83,
+			"Mạnh Phan Tuấn": 9.4,
+			"Nguyễn Thành An": 9.84
+		},
+		__v: 0
 	}
 ];
 function calcPointsOfEachPerson(allDayPoints) {

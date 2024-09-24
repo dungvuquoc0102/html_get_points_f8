@@ -192,6 +192,9 @@ html .content-wrapper .ranking .container .ranking-content .ranking-content-func
   color: #808080;
   margin-left: 30px;
 }
+html .content-wrapper .ranking .container .ranking-content .ranking-content-function .ranking-visit {
+  display: none;
+}
 html .content-wrapper .ranking .container .ranking-content .ranking-list-header {
   text-align: right;
   padding-right: 15px;

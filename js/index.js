@@ -522,6 +522,15 @@ function calcPointsOfEachPerson(allDayPoints) {
 	//add last day
 	const lastDayTag = document.getElementById("ranking-last-day");
 	lastDayTag.innerHTML = allDayPoints.length || 0;
+	//add count of visit
+	const apiNinjasResult = await fetch("https://api.api-ninjas.com/v1/counter?id=ranking.com&hit=true&value=0", {
+		method: "GET",
+		headers: {
+			"X-Api-Key": "MfgAkmIwKtRZ5ApDjy5HTw==Nq0czuPhxnqILN4F"
+		}
+	});
+	const visitNumber = await apiNinjasResult.json();
+	document.getElementById("ranking-visit").innerText = visitNumber.value || 0;
 	//show detail item
 	const rankingItemTags = document.querySelectorAll(".ranking-item");
 	rankingItemTags.forEach((rankingItemTag, index) => {
@@ -549,7 +558,7 @@ function calcPointsOfEachPerson(allDayPoints) {
 	window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", (event) => {
 		document.querySelector("html").classList.toggle("dark");
 	});
-	//add sound
+	//add animation follow sound
 	// const headerSoundTag = document.querySelector(".header-sound");
 	const headerSoundBtnTag = document.querySelector(".header-sound-btn");
 	headerSoundBtnTag.addEventListener("click", function () {

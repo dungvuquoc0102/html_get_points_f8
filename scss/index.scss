@@ -192,6 +192,9 @@ html {
 							color: #808080;
 							margin-left: 30px;
 						}
+						.ranking-visit {
+							display: none;
+						}
 					}
 					.ranking-list-header {
 						text-align: right;
@@ -355,18 +358,7 @@ html {
 							width: calc(100% - 10px);
 							height: calc(100% - 10px);
 							border-radius: 10px;
-							background: linear-gradient(
-								45deg,
-								#e6fb04,
-								#ff6600,
-								#00ff66,
-								#00ffff,
-								#ff00ff,
-								#ff0099,
-								#6e0dd0,
-								#ff3300,
-								#099fff
-							);
+							background: linear-gradient(45deg, #e6fb04, #ff6600, #00ff66, #00ffff, #ff00ff, #ff0099, #6e0dd0, #ff3300, #099fff);
 							background-size: 400%;
 							z-index: -1;
 							animation: animate 20s linear infinite;

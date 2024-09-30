@@ -289,13 +289,13 @@ const cloneAllDayPoints = [
 		__v: 0
 	},
 	{
-		_id: "66e3e6a2a080b86241863fcf",
+		_id: "66f4ddd2ad49adf4a46bfd94",
 		day: "day13",
 		pointsOfDay: {
 			"Hoàng Nguyễn Huy": 0,
 			"Nguyễn Trường Giang": 7.5,
 			"Mạnh Phan Tuấn": 8,
-			"Vũ Quốc Dũng": 7,
+			"Vũ Quốc Dũng": 7.5,
 			"Nguyễn Thế Hân": 7,
 			"Nguyễn Hải Dương": 4,
 			"Vũ Anh Tuấn": 6.5,
@@ -307,7 +307,7 @@ const cloneAllDayPoints = [
 		__v: 0
 	},
 	{
-		_id: "66e3e6a7a080b86241863fd1",
+		_id: "66f4deae3cecef66d902a072",
 		day: "day14",
 		pointsOfDay: {
 			"Nguyễn Hải Dương": 0,
@@ -325,7 +325,7 @@ const cloneAllDayPoints = [
 		__v: 0
 	},
 	{
-		_id: "66e3e6aca080b86241863fd3",
+		_id: "66f4deb33cecef66d902a074",
 		day: "day15",
 		pointsOfDay: {
 			"Hoàng Nguyễn Huy": 4,
@@ -343,12 +343,12 @@ const cloneAllDayPoints = [
 		__v: 0
 	},
 	{
-		_id: "66e3e6aea080b86241863fd5",
+		_id: "66f4deb53cecef66d902a076",
 		day: "day16",
 		__v: 0
 	},
 	{
-		_id: "66e3e6b2a080b86241863fd7",
+		_id: "66f4deb93cecef66d902a078",
 		day: "day17",
 		pointsOfDay: {
 			"Mạnh Phan Tuấn": 0,
@@ -362,7 +362,7 @@ const cloneAllDayPoints = [
 		__v: 0
 	},
 	{
-		_id: "66e3e6b7a080b86241863fd9",
+		_id: "66f4debe3cecef66d902a07a",
 		day: "day18",
 		pointsOfDay: {
 			"Trần Ngọc Duy": 9.8,
@@ -380,7 +380,7 @@ const cloneAllDayPoints = [
 		__v: 0
 	},
 	{
-		_id: "66e3e6bca080b86241863fdb",
+		_id: "66f4dec33cecef66d902a07c",
 		day: "day19",
 		pointsOfDay: {
 			"Trần Ngọc Duy": 6,
@@ -398,9 +398,10 @@ const cloneAllDayPoints = [
 		__v: 0
 	},
 	{
-		_id: "66e6f751661db0a6220d64ba",
+		_id: "66f4dec73cecef66d902a07e",
 		day: "day20",
 		pointsOfDay: {
+			"Trần Ngọc Duy": 0,
 			"Nguyễn Thế Hân": 9,
 			"Nguyễn Trường Giang": 10,
 			"Mạnh Phan Tuấn": 10,
@@ -415,11 +416,11 @@ const cloneAllDayPoints = [
 		__v: 0
 	},
 	{
-		_id: "66ebfc0f707ac1801f8fe528",
+		_id: "66f4decc3cecef66d902a080",
 		day: "day21",
 		pointsOfDay: {
 			"Hoàng Thanh Huy": 9.5,
-			"Nguyễn Hải Dương": 0,
+			"Nguyễn Hải Dương": 8.5,
 			"Nguyễn Thế Hân": 9.5,
 			"Nguyễn Thành An": 9.5,
 			"Vũ Anh Tuấn": 8.5,
@@ -432,7 +433,7 @@ const cloneAllDayPoints = [
 		__v: 0
 	},
 	{
-		_id: "66f0d987a204bb45b12094c5",
+		_id: "66f4ded03cecef66d902a082",
 		day: "day22",
 		pointsOfDay: {
 			"Nguyễn Thế Hân": 9.7,
@@ -449,7 +450,7 @@ const cloneAllDayPoints = [
 		__v: 0
 	},
 	{
-		_id: "66f35b8f5ace2a727574a9f1",
+		_id: "66f4ded43cecef66d902a084",
 		day: "day23",
 		pointsOfDay: {
 			"Nguyễn Trung Hiếu": 7.7,
@@ -464,10 +465,37 @@ const cloneAllDayPoints = [
 			"Lê Hữu Trọng": 9.5
 		},
 		__v: 0
+	},
+	{
+		_id: "66f966faa32c69e4d3d76989",
+		day: "day24",
+		pointsOfDay: {
+			"Vũ Quốc Dũng": 9.5,
+			"Mạnh Phan Tuấn": 8.9,
+			"Vũ Anh Tuấn": 9,
+			"Nguyễn Thế Hân": 0,
+			"Hoàng Thanh Huy": 8.7,
+			"Nguyễn Trường Giang": 9,
+			"Nguyễn Hải Dương": 9.4,
+			"Nguyễn Trung Hiếu": 8.4,
+			"Nguyễn Thành An": 9.4,
+			"Lê Hữu Trọng": 9.2
+		},
+		__v: 0
 	}
 ];
 function calcPointsOfEachPerson(allDayPoints) {
-	const peopleArr = ["Trần Ngọc Duy", "Anh Trần Tuấn", "Hoàng Nguyễn Huy", "Hoàng Thanh Huy", "Nguyễn Hải Dương", "Nguyễn Thế Hân", "Nguyễn Thành An", "Vũ Anh Tuấn", "Mạnh Phan Tuấn", "Vũ Quốc Dũng", "Nguyễn Trung Hiếu", "Nguyễn Trường Giang", "Lê Hữu Trọng"];
+	const peopleArr = [];
+	allDayPoints.forEach((day) => {
+		const dayData = day.pointsOfDay;
+		if (dayData) {
+			Object.keys(dayData).forEach((person) => {
+				if (!peopleArr.includes(person)) {
+					peopleArr.push(person);
+				}
+			});
+		}
+	});
 	let pointsOfEachPerson = {};
 	allDayPoints.forEach((day) => {
 		const dayName = day.day;
@@ -539,15 +567,6 @@ function calcPointsOfEachPerson(allDayPoints) {
 	//add last day
 	const lastDayTag = document.getElementById("ranking-last-day");
 	lastDayTag.innerHTML = allDayPoints.length || 0;
-	//add count of visit
-	const apiNinjasResult = await fetch("https://api.api-ninjas.com/v1/counter?id=ranking.com&hit=true&value=0", {
-		method: "GET",
-		headers: {
-			"X-Api-Key": "MfgAkmIwKtRZ5ApDjy5HTw==Nq0czuPhxnqILN4F"
-		}
-	});
-	const visitNumber = await apiNinjasResult.json();
-	document.getElementById("ranking-visit").innerText = visitNumber.value || 0;
 	//show detail item
 	const rankingItemTags = document.querySelectorAll(".ranking-item");
 	rankingItemTags.forEach((rankingItemTag, index) => {
@@ -560,35 +579,47 @@ function calcPointsOfEachPerson(allDayPoints) {
 			}
 		});
 	});
-	//change theme when click
-	const headerAppearanceTag = document.querySelector(".header-appearance");
-	const headerAppearanceBgTag = document.querySelector(".header-appearance-bg");
-	const headerAppearanceBtnTag = document.querySelector(".header-appearance-btn");
-	headerAppearanceTag.addEventListener("click", function () {
-		document.querySelector("html").classList.toggle("dark");
-	});
-	//change theme follow system
-	if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
-		document.querySelector("html").classList.toggle("dark");
-	}
-	//change theme when system change
-	window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", (event) => {
-		document.querySelector("html").classList.toggle("dark");
-	});
-	//add animation follow sound
-	// const headerSoundTag = document.querySelector(".header-sound");
-	const headerSoundBtnTag = document.querySelector(".header-sound-btn");
-	headerSoundBtnTag.addEventListener("click", function () {
-		// if (headerSoundTag.paused) {
-		// 	headerSoundTag.play();
-		// } else {
-		// 	headerSoundTag.pause();
-		// }
-		ulTag.classList.toggle("animation");
-		headerSoundBtnTag.classList.toggle("play");
-	});
-	// headerSoundTag.addEventListener("ended", function () {
-	// 	ulTag.classList.toggle("animation");
-	// 	headerSoundBtnTag.classList.remove("play");
-	// });
 })();
+(async () => {
+	//add count of visit
+	const apiNinjasResult = await fetch("https://api.api-ninjas.com/v1/counter?id=ranking.com&hit=true&value=0", {
+		method: "GET",
+		headers: {
+			"X-Api-Key": "MfgAkmIwKtRZ5ApDjy5HTw==Nq0czuPhxnqILN4F"
+		}
+	});
+	const visitNumber = await apiNinjasResult.json();
+	document.getElementById("ranking-visit").innerText = visitNumber.value || 0;
+})();
+//change theme when click
+const headerAppearanceTag = document.querySelector(".header-appearance");
+const headerAppearanceBgTag = document.querySelector(".header-appearance-bg");
+const headerAppearanceBtnTag = document.querySelector(".header-appearance-btn");
+headerAppearanceTag.addEventListener("click", function () {
+	document.querySelector("html").classList.toggle("dark");
+});
+//change theme follow system
+if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+	document.querySelector("html").classList.toggle("dark");
+}
+//change theme when system change
+window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", (event) => {
+	document.querySelector("html").classList.toggle("dark");
+});
+//add animation follow sound
+// const headerSoundTag = document.querySelector(".header-sound");
+const headerSoundBtnTag = document.querySelector(".header-sound-btn");
+const ulTag = document.getElementById("ranking-list");
+headerSoundBtnTag.addEventListener("click", function () {
+	// if (headerSoundTag.paused) {
+	// 	headerSoundTag.play();
+	// } else {
+	// 	headerSoundTag.pause();
+	// }
+	ulTag.classList.toggle("animation");
+	headerSoundBtnTag.classList.toggle("play");
+});
+// headerSoundTag.addEventListener("ended", function () {
+// 	ulTag.classList.toggle("animation");
+// 	headerSoundBtnTag.classList.remove("play");
+// });
